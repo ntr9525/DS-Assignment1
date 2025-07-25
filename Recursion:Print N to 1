@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void printForward(int n)
+void printBackward(int n)
 {
 
     if(n<=0)
@@ -9,7 +9,7 @@ void printForward(int n)
         return;
     }
     printf("%d ",n);
-    printForward(n-1);
+    printBackward(n-1);
 
     return;
 
@@ -20,7 +20,7 @@ int main()
     int n;
     cin>>n;
 
-    printForward(n);
+    printBackward(n);
     return 0;
 
 
