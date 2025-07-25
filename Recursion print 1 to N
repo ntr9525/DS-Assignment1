@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void printForward(int n){
+
+if(n<=0){
+    return;
+}
+printForward(n-1);
+printf("%d ",n);
+return;
+
+}
+
+int main(){
+int n;
+cin>>n;
+
+printForward(n);
+return 0;
+
+
+}
