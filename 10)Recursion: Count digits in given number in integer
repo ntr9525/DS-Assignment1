@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int count_digit(int n )
+{
+
+    if(n<10)
+    {
+        return 1; //base case
+    }
+
+    return 1+count_digit(n/10); //recursive call
+
+}
+
+int main()
+{
+    int n;
+    cin>>n; //user input
+
+    cout<<"The number of digits:"<<count_digit(n)<<endl; //output
+    return 0;
+
+
+}
