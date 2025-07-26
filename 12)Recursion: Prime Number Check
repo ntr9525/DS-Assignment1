@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool primeCheck(int n,int i )
+{
+    if(n<=1) return false;
+    else if(n==2)return true;
+    else if(n%i==0) return false;
+    else if(i>=n/2) return true;
+    else primeCheck(n,i+1); //recursive call
+
+
+}
+
+int main()
+{
+    int n,i=2;
+    cin>>n; //user input
+
+    if(primeCheck(n,i ))
+    {
+        cout<<"Prime Number"<<endl; //output
+    }
+    else
+    {
+        cout<<"Not Prime"<<endl;
+    }
+
+    return 0;
+
+
+}
+
