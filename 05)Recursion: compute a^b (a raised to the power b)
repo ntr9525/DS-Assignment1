@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int power(int a,int n )
+{
+
+    if(n==0)
+    {
+        return 1; //base case
+    }
+
+    return a*power(a,n-1); //recursive call
+
+}
+
+int main()
+{
+    int a,b;
+    cin>>a>>b; //user input
+
+    cout<<power(a,b)<<endl; //output
+    return 0;
+
+
+}
+
+
+
