@@ -1,0 +1,89 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define Max 3
+int mstack[Max];
+int top=-1;
+
+int isEmpty()
+{
+
+    if(top==-1)
+    {
+        return 1;
+    }
+    else return 0;
+
+}
+
+int isFull()
+{
+    if(top==Max-1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void push(int value)
+{
+    if(isFull())
+    {
+        cout<<"STACK OVERFLOW"<<endl;
+        return;
+    }
+    else
+    {
+        mstack[++top]=value;
+    }
+}
+
+void pop()
+{
+    if(isEmpty())
+    {
+        printf("STACK UNDERFLOW\n");
+        return;
+    }
+    else
+    {
+        top--;
+    }
+}
+
+
+void display()
+{
+    if(isEmpty())
+    {
+        printf("stack is empty\n");
+        return;
+    }
+    else
+    {
+
+        for(int i=top; i>=0; i--)
+        {
+            printf("%d\n",mstack[i]);
+        }
+    }
+
+}
+
+int main()
+{
+    cout<<"After pushing more than size:"<<endl;
+    push(5);
+    push(6);
+    push(10);
+    push(22);
+    cout<<"After removing more than size"<<endl;
+    pop();
+    pop();
+    pop();
+    pop();
+
+    return 0;
+}
