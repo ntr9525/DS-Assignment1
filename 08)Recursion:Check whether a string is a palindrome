@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool  check_palindrome(char str[],int left,int right)
+{
+    if(left>=right)
+    {
+        return true;
+    }
+    else if(str[left]==str[right])
+    {
+        return check_palindrome(str,left +1,right-1);
+    }
+
+    else
+    {
+        return false;
+    }
+
+}
+
+
+int main()
+{
+
+
+    char str[100];
+
+    scanf("%s",str);
+
+    int len=strlen(str);
+
+
+    if(check_palindrome(str,0,len-1))
+    {
+        cout<<"Palindrome"<<endl;
+    }
+    else
+    {
+        cout<<"Not palindrome"<<endl;
+    }
+
+
+
+    return 0;
+
+}
