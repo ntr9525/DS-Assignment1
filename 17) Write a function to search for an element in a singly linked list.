@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct node
+{
+    int data;
+    node* next;
+};
+node* root=nullptr;
+
+void addNode(int data)
+{
+    node* new_node=new node();
+    new_node -> data=data;
+    new_node -> next=nullptr;
+    if(root==nullptr)
+    {
+        root=new_node;
+    }
+    else
+    {
+        node* current_node=root;
+        while(current_node->next!=nullptr)
+        {
+            current_node=current_node->next;
+        }
+        current_node->next=new_node;
+    }
+
+}
+
+
+
+void searchNode(int data)
+{
+
+    node* current_node=root;
+    int index=0;
+    while(current_node!=nullptr)
+    {
+
+        if(current_node->data==data)
+        {
+            cout<<"data found at index"<<index<<endl;
+            return;
+
+        }
+        else
+        {
+            current_node=current_node->next;
+            index++;
+        }
+
+    }
+    printf("Not found\n");
+}
+
+
+
+int main()
+{
+
+    int arr[]= {1,2,3,4,5,6};
+    int n=6;
+    for(int i=0; i<n; i++)
+    {
+        addNode(arr[i]);
+    }
+    
+    searchNode(8);
+
+    return 0;
+}
+
