@@ -1,0 +1,103 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define M 5
+int Q[M];
+int fr=-1,re=-1;
+
+int isempty()
+{
+
+    if(fr==-1||fr>re)
+    {
+        return 1;
+    }
+    else return 0;
+
+}
+
+int isFull()
+{
+
+    if(re==M-1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+
+}
+
+void enQ(int value)
+{
+    if(isFull())
+    {
+        printf("overflow\n");
+        return;
+    }
+    if(isempty())
+    {
+        fr=0;
+
+    }
+
+
+    Q[++re]=value;
+}
+
+
+
+void DQ()
+{
+
+    if(isempty())
+    {
+
+        printf("underflow\n");
+        return;
+    }
+
+    else
+    {
+
+        ++fr;
+        if(fr > re)
+        {
+            fr = re = -1;
+        }
+
+    }
+}
+
+
+
+void display()
+{
+
+    if(isempty())
+    {
+
+        cout<<"EMPTY";
+        return;
+    }
+    else
+    {
+        for(int i=fr; i<=re; i++)
+        {
+            cout<<Q[i]<<endl;
+        }
+    }
+
+}
+
+int main()
+{
+
+    enQ(4);
+    enQ(5);
+    DQ();
+    display();
+    return 0;
+
+}
