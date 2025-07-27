@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void selection(int arr[],int n)
+{
+
+    for(int i=0; i<n-1; i++)
+    {
+
+        int minindex=i;
+        for(int j=i+1; j<n; j++)
+        {
+
+            if(arr[j]<arr[minindex])
+            {
+                minindex=j;
+            }
+        }
+
+        int temp=arr[i];
+        arr[i]=arr[minindex];
+        arr[minindex]=temp;
+
+
+
+    }
+
+
+    for(int i=0; i<n; i++)
+    {
+        printf("%d\n",arr[i]);
+    }
+}
+
+
+int main()
+{
+
+    int n=5;
+    int arr[n]= {3,7,5,8,9};
+
+    selection(arr,n);
+
+    return 0;
+}
